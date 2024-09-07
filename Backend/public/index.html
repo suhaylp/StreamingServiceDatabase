@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="stylesheet" href="styles.css">
+
+    <title>Streaming Service Application</title>
+
+    </head>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="manage_reviews.html">Manage Reviews</a></li>
+        <li><a href="update_users.html">Update Users</a></li>
+        <li><a href="view_media.html">View Media</a></li>
+        <li><a href="view_directors.html">View Directors</a></li>
+    </ul>
+</nav>
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+
+<h1>CPSC 304 Streaming Service Provider Database App</h1>
+
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+
+<!-- Show 'Reviewtable'.
+    Data will be fetched and inserted here dynamically using JavaScript. -->
+<h2>Show Review Table</h2>
+<table id="reviewtable" border="1">
+
+    <button type="click" id ="reviewSelection"> Show reviews above 3 stars </button> <br>
+    <button type="click" id="showOnlyStarsComments"> Show only review ID, comment and star number </button> <br>
+
+    <thead>
+    <tr>
+        <!--Table head, need to be adjusted accordingly to align with your own.-->
+        <th>Review ID</th>
+        <th>Comment</th>
+        <th>Star Number</th>
+        <th>User Email</th>
+        <th>Media ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+<h2>Delete Review</h2>
+<form id="deleteReview">
+    Review ID: <input type="text" id="deletereviewID" placeholder="Enter Review ID" required><br><br>
+    Email: <input type="text" id="deleteemail" placeholder="Enter Email" required><br><br>
+    Media ID: <input type="text" id="deletemediaID" placeholder="Enter Media ID" required><br><br>
+
+    <button type="submit"> Delete </button> <br>
+</form>
+<div id="deleteResultMsg"></div>
+
+<br>
+<hr><br><!-- ========================================================================= -->
+
+<h2> Insert Reviews into Review Table </h2>
+<form id="insertReviewtable">
+    Review ID: <input type="text" id="insertreviewID" placeholder="Enter Review ID" required> <br><br>
+    Comment: <input type="text" id="insertcomment" placeholder="Enter Comment" maxlength="20"> <br><br>
+    Star Number: <input type="number" id="insertstarNum" placeholder="Enter Star Number" required> <br><br>
+    Email: <input type="text" id="insertemail" placeholder="Enter Email" required> <br><br>
+    Media ID: <input type="text" id="insertmediaID" placeholder="Enter Media ID" required> <br><br>
+
+    <button type="submit"> Insert </button> <br>
+</form>
+<div id="insertResultMsg"></div>
+
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+<!-- Show 'Usertable'.
+   Data will be fetched and inserted here dynamically using JavaScript. -->
+<h2>Show User Table</h2>
+<table id="useraccounttable" border="1">
+    <thead>
+    <tr>
+        <!--Table head, need to be adjusted accordingly to align with your own.-->
+        <th>Email</th>
+        <th>Phone #</th>
+        <th>Full Name</th>
+        <th>Date of birth</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+<h2>Update Phone Number in User Table</h2>
+<p>The values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</p>
+<form id="updatePhoneUserTable">
+    Old Phone Number: <input type="text" id="updateoldphone" placeholder="Enter Old Phone Number" required> <br><br>
+    New Phone Number: <input type="text" id="updatenewphone" placeholder="Enter New Phone Number" required> <br><br>
+    <button type="submit"> Update </button> <br>
+</form>
+<!-- A placeholder to display messages related to the update operation. -->
+<div id="updatePhoneResultMsg"></div>
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+<h2>Update Name in User Table</h2>
+<p>The values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</p>
+<form id="updateNameUserTable">
+    Old Name: <input type="text" id="update2oldname" placeholder="Enter Old Name" required> <br><br>
+    New Name: <input type="text" id="update2newname" placeholder="Enter New Name" required> <br><br>
+    <button type="submit"> update </button> <br>
+</form>
+<!-- A placeholder to display messages related to the update operation. -->
+<div id="updateNameResultMsg"></div>
+<br>
+<hr><br> <!-- ========================================================================= -->
+<!-- Show 'Directortable'.
+    Data will be fetched and inserted here dynamically using JavaScript. -->
+<h2>Show Director Table</h2>
+<table id="directortable" border="1">
+
+    <button type="click" id="division"> View directors with media from every genre </button> <br>
+
+    <thead>
+    <tr>
+        <!--Table head, need to be adjusted accordingly to align with your own.-->
+        <th>Director ID</th>
+        <th>Director Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<br>
+<hr><br> <!-- ========================================================================= -->
+
+
+<!-- Show 'Mediatable'.
+    Data will be fetched and inserted here dynamically using JavaScript. -->
+<h2>Show Media Table</h2>
+<table id="mediatable" border="1">
+
+    <button type="click" id ="over5ReviewsMedia"> Show media with over 5 reviews </button> <br>
+
+
+    <thead>
+    <tr>
+        <!--Table head, need to be adjusted accordingly to align with your own.-->
+        <th>Media ID</th>
+        <th>Title</th>
+        <th>Producer ID</th>
+        <th>Genre</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<form id="joinMediaMediaProducer">
+    Producer: <input type="text" id="producerid" placeholder="Enter Producer ID" required> <br><br>
+    <button type="submit"> Search </button> <br>
+</form>
+
+<form id="aggregateMediaGenre">
+    Genre: <input type="text" id="genrename" placeholder="Enter Genre Name" required> <br><br>
+    <button type="submit"> Search </button> <br>
+</form>
+
+<form id="aggregateMediaGenreProducer">
+    Producer: <input type="text" id="producerid1" placeholder="Enter Producer ID" required> <br><br>
+    Genre: <input type="text" id="genrename1" placeholder="Enter Genre" required> <br><br>
+    <button type="submit"> Search </button> <br>
+</form>
+
+
+<!-- ===================================================================================== -->
+<!-- External JavaScript file that contains the functionality/logic for the operations above. -->
+<script src="scripts.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+
+        fetchTableData();
+        //document.getElementById("resetReviewtable").addEventListener("click", resetReviewtable);
+        document.getElementById("insertReviewtable").addEventListener("submit", insertReview);
+        document.getElementById("deleteReview").addEventListener("submit", deleteReview);
+        document.getElementById("reviewSelection").addEventListener("click", reviewSelection);
+
+        document.getElementById("updateNameUserTable").addEventListener("submit", updateUserName);
+        document.getElementById("updatePhoneUserTable").addEventListener("submit", updateUserPhone);
+
+        document.getElementById("showOnlyStarsComments").addEventListener("click", showOnlyStarsComments);
+        document.getElementById("over5ReviewsMedia").addEventListener("click", over5ReviewsMedia);
+        document.getElementById("division").addEventListener("click", divisionFunction);
+
+        document.getElementById("joinMediaMediaProducer").addEventListener("submit", joinMediaMediaProducer);
+        document.getElementById("aggregateMediaGenre").addEventListener("submit", aggregateMediaGenre);
+        document.getElementById("aggregateMediaGenreProducer").addEventListener("submit", aggregateMediaGenreProducer);
+
+        // document.getElementById("countDemotable").addEventListener("click", countDemotable);
+    };
+</script>
+</body>
+
+
+</html>

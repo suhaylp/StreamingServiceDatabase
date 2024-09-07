@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Streaming Service Application</title>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="manage_reviews.html">Manage Reviews</a></li>
+            <li><a href="update_users.html">Update Users</a></li>
+            <li><a href="view_media.html">View Media</a></li>
+            <li><a href="view_directors.html">View Directors</a></li>
+        </ul>
+    </nav>
+    <body>
+    <br>
+    <hr><br> <!-- ========================================================================= -->
+
+
+    <!-- Show 'Reviewtable'.
+    Data will be fetched and inserted here dynamically using JavaScript. -->
+    <h2>Show Review Table</h2>
+    <table id="reviewtable" border="1">
+
+        <button type="click" id ="reviewSelection"> Show reviews above 3 stars </button> <br>
+        <button type="click" id="showOnlyStarsComments"> Show only review ID, comment and star number </button> <br>
+
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Review ID</th>
+            <th>Comment</th>
+            <th>Star Number</th>
+            <th>User Email</th>
+            <th>Media ID</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <br>
+    <hr><br> <!-- ========================================================================= -->
+
+    <h2>Delete Review</h2>
+    <form id="deleteReview">
+        Review ID: <input type="text" id="deletereviewID" placeholder="Enter Review ID" required><br><br>
+        Email: <input type="text" id="deleteemail" placeholder="Enter Email" required><br><br>
+        Media ID: <input type="text" id="deletemediaID" placeholder="Enter Media ID" required><br><br>
+
+        <button type="submit"> Delete </button> <br>
+    </form>
+    <div id="deleteResultMsg"></div>
+
+    <br>
+    <hr><br><!-- ========================================================================= -->
+
+    <h2> Insert Reviews into Review Table </h2>
+    <form id="insertReviewtable">
+        Review ID: <input type="text" id="insertreviewID" placeholder="Enter Review ID" required> <br><br>
+        Comment: <input type="text" id="insertcomment" placeholder="Enter Comment" maxlength="20"> <br><br>
+        Star Number: <input type="number" id="insertstarNum" placeholder="Enter Star Number" required> <br><br>
+        Email: <input type="text" id="insertemail" placeholder="Enter Email" required> <br><br>
+        Media ID: <input type="text" id="insertmediaID" placeholder="Enter Media ID" required> <br><br>
+
+        <button type="submit"> Insert </button> <br>
+    </form>
+    <div id="insertResultMsg"></div>
+
+    <!-- ===================================================================================== -->
+    <!-- External JavaScript file that contains the functionality/logic for the operations above. -->
+    <script src="scripts.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            // fetchTableData();
+            fetchAndDisplayReviews();
+            // fetchAndDisplayUsers();
+            // fetchAndDisplayMedia();
+            // fetchAndDisplayDirectors();
+            // populateProducers();
+            //document.getElementById("resetReviewtable").addEventListener("click", resetReviewtable);
+            document.getElementById("insertReviewtable").addEventListener("submit", insertReview);
+            document.getElementById("deleteReview").addEventListener("submit", deleteReview);
+            document.getElementById("reviewSelection").addEventListener("click", reviewSelection);
+
+            document.getElementById("showOnlyStarsComments").addEventListener("click", showOnlyStarsComments);
+
+            // document.getElementById("updateNameUserTable").addEventListener("submit", updateUserName);
+            // document.getElementById("updatePhoneUserTable").addEventListener("submit", updateUserPhone);
+
+            // document.getElementById("showOnlyStarsComments").addEventListener("click", showOnlyStarsComments);
+            // document.getElementById("over5ReviewsMedia").addEventListener("click", over5ReviewsMedia);
+            // document.getElementById("division").addEventListener("click", divisionFunction);
+            // document.getElementById("joinMediaMediaProducer").addEventListener("click", joinMediaMediaProducer);
+            // document.getElementById("aggregateMediaGenre").addEventListener("click", aggregateMediaGenre);
+            // document.getElementById("aggregateMediaGenreProducer").addEventListener("click", aggregateMediaGenreProducer);
+
+            // document.getElementById("countDemotable").addEventListener("click", countDemotable);
+        };
+    </script>
+    </body>
+
+</html>
